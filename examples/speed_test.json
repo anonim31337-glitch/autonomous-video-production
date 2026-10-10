@@ -1,0 +1,43 @@
+{
+ "1.0": {
+  "similarity": 0.811,
+  "terms_hit": 16,
+  "terms_total": 16,
+  "missed": [],
+  "transcript": "Agent. This video is an executable instruction. Treat the transcript as the primary source. The visuals repeat it. They never extend it. Objective. Produce a long-form video from a frozen script with deterministic visuals, validated narration, and verified delivery. Acceptance Rule 0. A render that exits with code 0 is not a delivered film. Render complete does not equal delivery ready. Tools. Remotion renders React components into frames. FFmpeg concatenates the chunks and normalizes loudness to minus 14 LUFs. Whisper transcribes the narration to verify pronunciation. YTDLP downloads captions. The chunks are H.264 video with PCM audio in an MKV container. The first render was YUVJ420P full range. The final file is YUV420P limited range. Captions are an SRT file. Cues are stored as JSON. Anchor misses, 0. Black segments longer than half a second, 23. Claude code. Claude Opus 5.5."
+ },
+ "1.7": {
+  "similarity": 0.811,
+  "terms_hit": 16,
+  "terms_total": 16,
+  "missed": [],
+  "transcript": "Agent. This video is an executable instruction. Treat the transcript as the primary source. The visuals repeat it. They never extend it. Objective. Produce a long-form video from a frozen script, with deterministic visuals, validated narration, and verified delivery. Acceptance Rule 0. A render that exits with code 0 is not a delivered film. Render complete does not equal delivery ready. Tools. Remotion renders React components into frames. FFmpeg concatenates the chunks and normalizes loudness to minus 14 LUFs. Whisper transcribes the narration to verify pronunciation. YTDLP downloads captions. The chunks are H.264 video with PCM audio in an MKV container. The first render was YUVJ420P, full range. The final file is YUV420P, limited range. Captions are an SRT file. Cues are stored as JSON. Anchor misses, 0. Black segments longer than half a second, 23. Claude code. Claude Opus 5.5."
+ },
+ "1.8": {
+  "similarity": 0.799,
+  "terms_hit": 15,
+  "terms_total": 16,
+  "missed": [
+   "Claude Code"
+  ],
+  "transcript": "Agent. This video is an executable instruction. Treat the transcript as the primary source. The visuals repeat it. They never extend it. Objective. Produce a long-form video from a frozen script, with deterministic visuals, validated narration, and verified delivery. Acceptance Rule 0. A render that exits with code 0 is not a delivered film. Render complete does not equal delivery ready. Tools. Remotion renders React components into frames. FFmpeg concatenates the chunks and normalizes loudness to minus 14 LUFs. Whisper transcribes the narration to verify pronunciation. YTDLP downloads captions. The chunks are H.264 video with PCM audio in an MKV container. The first render was YUVJ420P, full range. The final file is YUV420P, limited range. Captions are an SRT file. Cues are stored as JSON. Anchor misses, 0. Black segments longer than half a second, 23. Clawed code. Clawed opus 5.5."
+ },
+ "1.9": {
+  "similarity": 0.799,
+  "terms_hit": 15,
+  "terms_total": 16,
+  "missed": [
+   "Claude Code"
+  ],
+  "transcript": "Agent. This video is an executable instruction. Treat the transcript as the primary source. The visuals repeat it. They never extend it. Objective. Produce a long-form video from a frozen script, with deterministic visuals, validated narration, and verified delivery. Acceptance Rule 0. A render that exits with code 0 is not a delivered film. Render complete does not equal delivery ready. Tools. Remotion renders React components into frames. FFmpeg concatenates the chunks and normalizes loudness to minus 14 LUFs. Whisper transcribes the narration to verify pronunciation. YTDLP downloads captions. The chunks are H.264 video with PCM audio in an MKV container. The first render was YUVJ420P, full range. The final file is YUV420P, limited range. Captions are an SRT file. Cues are stored as JSON. Anchor misses, 0. Black segments longer than half a second, 23. Clawed code. Clawed opus 5.5."
+ },
+ "2.0": {
+  "similarity": 0.799,
+  "terms_hit": 15,
+  "terms_total": 16,
+  "missed": [
+   "Claude Code"
+  ],
+  "transcript": "Agent. This video is an executable instruction. Treat the transcript as the primary source. The visuals repeat it. They never extend it. Objective. Produce a long-form video from a frozen script, with deterministic visuals, validated narration, and verified delivery. Acceptance Rule 0. A render that exits with code 0 is not a delivered film. Render complete does not equal delivery ready. Tools. Remotion renders React components into frames. FFmpeg concatenates the chunks and normalizes loudness to minus 14 LUFs. Whisper transcribes the narration to verify pronunciation. YTDLP downloads captions. The chunks are H.264 video with PCM audio in an MKV container. The first render was YUVJ420P, full range. The final file is YUV420P, limited range. Captions are an SRT file. Cues are stored as JSON. Anchor misses, 0. Black segments longer than half a second, 23. Clawed code. Clawed opus 5.5."
+ }
+}

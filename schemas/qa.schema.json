@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Append-only QA history of a production",
+  "type": "object",
+  "required": ["renders"],
+  "properties": {
+    "note": {"type": "string"},
+    "renders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "finished", "video", "loudness", "black_segments", "silences_over_2s_start"],
+        "properties": {
+          "id": {"type": "string"},
+          "finished": {"type": "string", "description": "ISO 8601 local time"},
+          "file": {"type": "string"},
+          "duration_s": {"type": "number"},
+          "video": {"type": "string", "description": "codec WxH fps pix_fmt from ffprobe"},
+          "loudness": {"type": "object", "properties": {"I_LUFS": {"type": "number"}, "LRA_LU": {"type": "number"}, "TP_dBFS": {"type": "number"}}},
+          "black_segments": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2}},
+          "silences_over_2s_start": {"type": "array", "items": {"type": "number"}},
+          "classification": {"type": "object", "additionalProperties": {"type": "string"}, "description": "Result of inspecting a frame per interval: real or false positive, and cause"},
+          "fixes": {"type": "array", "items": {"type": "string"}, "description": "Upstream changes made after this render"},
+          "rerender": {"type": "string", "description": "full, or partial with the chunks re-rendered"},
+          "verdict": {"type": "string"},
+          "delivery": {"type": "object"}
+        }
+      }
+    }
+  }
+}

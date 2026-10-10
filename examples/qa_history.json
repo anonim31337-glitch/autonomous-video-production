@@ -1,0 +1,59 @@
+{
+  "note": "QA history of the V2 render loop. Render 1 and 2 values were copied verbatim from qa.py output in the production session (QA_REPORT.json was overwritten by render 3). Source tool: 00_PROJECT/tools/qa.py (ffmpeg blackdetect d=0.5 pix_th=0.08, silencedetect -50dB d=2, ebur128).",
+  "renders": [
+    {
+      "id": "render1",
+      "finished": "2026-10-06T11:40:20",
+      "file": "V2/out/film_render1_old (parts) + LAUFER108_V2_render1_old.mp4",
+      "duration_s": 2125.9,
+      "video": "h264 1920x1080 30/1 yuvj420p",
+      "loudness": {"I_LUFS": -14.3, "LRA_LU": 2.9, "TP_dBFS": -1.2},
+      "black_segments": [[161.267, 164.267], [259.767, 266.0], [454.967, 456.367], [645.867, 648.034], [697.801, 703.367], [838.567, 842.001], [886.967, 894.867], [962.301, 970.434], [1015.001, 1021.301], [1053.601, 1059.334], [1125.967, 1128.134], [1301.634, 1303.834], [1376.601, 1379.601], [1458.767, 1464.001], [1510.334, 1513.234], [1667.801, 1675.868], [1700.034, 1710.101], [1732.801, 1737.568], [1772.468, 1777.768], [1799.101, 1805.434], [1823.434, 1830.934], [1960.401, 1964.234], [1990.001, 1992.601]],
+      "silences_over_2s_start": [378.453208, 1758.923583, 2090.532],
+      "classification": {
+        "black_segments": "23/23 real editorial failures after frame inspection (V2/09_QA/black/sheet.jpg): beats showing only the header while the body waited for a later narration phrase. 0 detector false positives.",
+        "silences": "3/3 real: music bed shorter than the chapter, gap between chapters (end of Ch1, Ch6, Ch7).",
+        "color": "yuvj420p (full range) from JPEG frame capture; Config.setPixelFormat did not reach the H.264 stream."
+      },
+      "fixes": [
+        "kit.tsx: BeatStart context; Bars/Versus/Flow/Points/Head show a dim skeleton from the beat start, values at their phrase",
+        "Film.tsx: music beds <Audio loop>, fade in the last second of the segment",
+        "remotion.config.ts: setPixelFormat('yuv420p') (no effect, see render2)",
+        "Ch6: overlapping bar, truncated labels, wrapped value text"
+      ],
+      "rerender": "full (all 4 chunks)"
+    },
+    {
+      "id": "render2",
+      "finished": "2026-10-06T12:50:10",
+      "file": "V2/out/film_render2_old/",
+      "video": "h264 1920x1080 30/1 yuvj420p",
+      "loudness": {"I_LUFS": -14.3, "LRA_LU": 2.8, "TP_dBFS": -1.2},
+      "black_segments": [[161.267, 163.9], [838.567, 842.001], [1960.401, 1964.234], [1990.001, 1992.601]],
+      "silences_over_2s_start": [],
+      "classification": {
+        "black_segments": "4/4 real (V2/09_QA/black2/s.jpg): Ch1 first beat timeline started late, Ch3 Hermes numbers waited for phrases, Ch7 channel cards (2 beats) waited for each channel name.",
+        "color": "still yuvj420p"
+      },
+      "fixes": [
+        "Ch1: FableTimeline from frame 0",
+        "Ch3: first Hermes number at beat start",
+        "Ch7: Channels component dim skeleton from beat start",
+        "render_film.sh: final ffmpeg pass re-encodes video with scale=in_range=full:out_range=tv,format=yuv420p"
+      ],
+      "rerender": "partial: chunks part0, part1, part3 (part2 unchanged and reused)"
+    },
+    {
+      "id": "render3",
+      "finished": "2026-10-06T13:51:54",
+      "file": "V2/out/LAUFER108_V2_OPUS55_FINAL.mp4",
+      "report": "V2/09_QA/QA_REPORT.json",
+      "video": "h264 1920x1080 30/1 yuv420p",
+      "loudness": {"I_LUFS": -14.3, "LRA_LU": 2.8, "TP_dBFS": -1.2},
+      "black_segments": [],
+      "silences_over_2s_start": [],
+      "verdict": "PASS (all gates except the V1-only 32-35 min runtime gate; V2 = 35:25)",
+      "delivery": {"uploaded": "2026-10-06T14:00", "url": "https://youtu.be/MJ1yofszJZs", "privacy": "private", "verified_via_api": true}
+    }
+  ]
+}

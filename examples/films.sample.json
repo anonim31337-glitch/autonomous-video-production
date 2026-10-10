@@ -1,0 +1,114 @@
+{
+ "note": "10 of 239 rows of the reference data file (films.json). Public YouTube metadata + topic flags computed by the reference run. In the reference run 17 rows of one channel carried dates approximated from relative upload times (\"1 month ago\") and a slicing bug; dates below are the true upload dates read with yt-dlp on 2026-10-10.",
+ "channels": [
+  "AI W Praktyce",
+  "Webflip AI",
+  "Michał Barczak - GeekWork",
+  "Mikołaj Abramczuk",
+  "AI bez jaj",
+  "Norbert Uselis",
+  "Robert Szewczyk",
+  "NetGonet",
+  "Aleks Szach",
+  "Kuba Klawiter",
+  "Krzysztof Bohaczyk"
+ ],
+ "films": [
+  {
+   "id": "OumZR2gOgrE",
+   "ch": 10,
+   "title": "Spy in Claude Code, Fable 5, GPT 5.6, Gemini Spark. AI News",
+   "date": "2026-07-05",
+   "views": 2900,
+   "dur": 1499,
+   "t": [
+    "fable"
+   ]
+  },
+  {
+   "id": "RY2UAY6OlHY",
+   "ch": 10,
+   "title": "I connected GLM 5.2 to Claude Code (full guide)",
+   "date": "2026-06-26",
+   "views": 7100,
+   "dur": 1476,
+   "t": []
+  },
+  {
+   "id": "9s1xL7Kk5yY",
+   "ch": 10,
+   "title": "Watch this before you install another skill (Claude Code)",
+   "date": "2026-06-20",
+   "views": 5400,
+   "dur": 1287,
+   "t": []
+  },
+  {
+   "id": "e_WlshY8fzk",
+   "ch": 10,
+   "title": "Fable 5 - NAJGROŹNIEJSZY model od Anthrtopic? Sprawdzam.",
+   "date": "2026-06-13",
+   "views": 2000,
+   "dur": 1463,
+   "t": [
+    "fable"
+   ]
+  },
+  {
+   "id": "mQQ4IBtp42A",
+   "ch": 10,
+   "title": "Claude Code on a VPS: A Complete Beginner's Guide",
+   "date": "2026-08-01",
+   "views": 2700,
+   "dur": 2367,
+   "t": []
+  },
+  {
+   "id": "QfSo3jGXc7s",
+   "ch": 10,
+   "title": "How to Cut AI Costs (Up to 84% Cheaper Than Official Prices)",
+   "date": "2026-07-28",
+   "views": 1900,
+   "dur": 1001,
+   "t": []
+  },
+  {
+   "id": "Kkcn6aO1O7Q",
+   "ch": 10,
+   "title": "Build your first AI agent from scratch (Hermes Agent)",
+   "date": "2026-07-18",
+   "views": 7900,
+   "dur": 4714,
+   "t": []
+  },
+  {
+   "id": "dvWc9O9q2xQ",
+   "ch": 10,
+   "title": "Stop Using /compact in Claude Code. Use This Skill Instead",
+   "date": "2026-07-11",
+   "views": 2500,
+   "dur": 939,
+   "t": []
+  },
+  {
+   "id": "ohh9tXa5eGc",
+   "ch": 10,
+   "title": "Fable 5.1 looks TOO GOOD. Qwen 3.8, Robokaczka, Kimi K3. AI News",
+   "date": "2026-09-05",
+   "views": 3400,
+   "dur": 1525,
+   "t": [
+    "fable"
+   ]
+  },
+  {
+   "id": "27SSsWmgRgE",
+   "ch": 10,
+   "title": "Master Claude Desktop in 27 Minutes: The Complete Guide",
+   "date": "2026-08-30",
+   "views": 3400,
+   "dur": 1745,
+   "t": []
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+  "name": "autonomous-video-production",
+  "version": "1.0.0",
+  "author": "Laufer108",
+  "project": "Laufer108 AI-native film: an instruction for AI agents, published as a video",
+  "purpose": "Autonomous long-form narrated video production with verification at every stage",
+  "target_agents": [
+    "Claude Code",
+    "Claude Opus 5.5",
+    "later Claude versions",
+    "other tool-using agents"
+  ],
+  "entry_points": {
+    "skill": ".claude/skills/autonomous-video-production/SKILL.md",
+    "transcript": "TRANSCRIPT.md",
+    "canon_template": "templates/canon.md",
+    "reference_code": "reference/",
+    "examples": "examples/"
+  },
+  "reference_implementation": {
+    "film": "Laufer108 review of 239 Polish AI videos, version 2",
+    "runtime": "35:25",
+    "delivered": "2026-10-06, private upload, verified by read-back",
+    "renders_to_pass": 3,
+    "qa_history": "examples/qa_history.json"
+  },
+  "tested_environment": {
+    "os": "Windows 10 (one machine, 4-thread laptop CPU, GTX 960M)",
+    "node": "22.23.2",
+    "remotion": "4.0.416",
+    "react": "19.0.0",
+    "python": "3.11.15 (Whisper, YouTube API, tools)",
+    "ffmpeg": "7.1 essentials build (gyan.dev)",
+    "openai_whisper": "20250625, model medium",
+    "chrome": "151.0.7922.138",
+    "yt_dlp": "2026.7.4 (public metadata and captions; the ingestion script is not published)",
+    "google_api_python_client": "2.194.0",
+    "google_auth": "2.55.1",
+    "pillow": "12.2.0",
+    "tts_engine": "Scrimba Explain via MCP endpoint https://scrimba.com/explain/pr/mcp (pl-PL, en-US voices)",
+    "tested_model": "Claude Opus 5.5 in Claude Code"
+  },
+  "input_contract": {
+    "operator_answers": [
+      "topic and sources",
+      "channels and cutoff date (review films)",
+      "narration language",
+      "voice engine and terms-of-use decision",
+      "rights-cleared music",
+      "target channel id and OAuth token file",
+      "runtime limit",
+      "what must not be shown"
+    ],
+    "narration_timing": "schemas/cues.schema.json: one audio file per module plus {duration, lines:[{t, text}]}"
+  },
+  "output_contract": [
+    "final MP4 (H.264 yuv420p limited range, AAC 48 kHz)",
+    "SRT captions (canonical transcript)",
+    "metadata.json (title, description with chapters, tags)",
+    "thumbnail 1280x720",
+    "QA report",
+    "append-only qa_history.json",
+    "upload receipt",
+    "private YouTube video verified by read-back"
+  ],
+  "gates": {
+    "build": {
+      "anchor_misses": 0,
+      "contact_sheets_reviewed": true,
+      "caption_assertions": [
+        "line count unchanged",
+        "no phonetic spelling outside quotation marks",
+        "end > start",
+        "no overlap",
+        "last cue inside the film"
+      ],
+      "whisper": {
+        "model": "medium",
+        "names_recognized": "all listed",
+        "difflib_ratio_min": 0.85,
+        "basis": "Whisper text vs DISPLAY text, lowercase words, digits for numbers (reference/tools/asr_gate_en.py)",
+        "on_fail": "fix the display text or re-record; never lower the threshold",
+        "measured_en": {
+          "1.0x": 0.986,
+          "1.8x": 0.972
+        }
+      },
+      "runtime_at_most_limit": true
+    },
+    "delivery": {
+      "runtime_max": "project limit (this film: 39:30)",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "audio_sample_rate_hz": 48000,
+      "integrated_loudness_lufs": [
+        -15,
+        -13
+      ],
+      "true_peak_dbtp_max": -1.0,
+      "black_segments": {
+        "filter": "blackdetect=d=0.5:pix_th=0.08",
+        "max_count": 0
+      },
+      "silences": {
+        "filter": "silencedetect=noise=-50dB:d=2",
+        "max_count": 0
+      },
+      "decode_errors": 0,
+      "pixel_format": "yuv420p",
+      "color_range": "tv",
+      "captions": "inside the film, no phonetic spellings outside quotation marks",
+      "frame_review": "1 frame per minute + 1 frame per detector interval, inspected",
+      "upload": "private; channel id matched before upload; read back with videos.list and captions.list"
+    }
+  },
+  "runtime_constraint": {
+    "this_film_max": "39:30",
+    "reason": "operator: downstream analytics processes videos under 40 minutes (operator decision, not verified by the agent)"
+  },
+  "source_authority": "artifacts on disk > canon file > earlier prompts > chat; unverifiable facts are marked unverified",
+  "known_limitations": [
+    "Tested on one Windows machine only.",
+    "Narration captured from browser playback because download requires a login and claim; compliance with the provider's terms is unverified and is the operator's decision.",
+    "No fallback TTS engine was tested. If narration capture breaks, the agent stops and reports; the operator decides on another engine.",
+    "Remotion pixel-format setting did not change JPEG-based full-range output; the final ffmpeg pass converts it.",
+    "Whisper similarity is a coarse gate: digits vs numerals count as differences; homophones (Claude/clawed) pass by ear but not by spelling.",
+    "reference/ holds two code references: the version-two excerpt (does not build) and film2/, the complete code of the AI-native film (built and rendered; its narration, cues, generated shots and outro are not published)."
+  ],
+  "license": {
+    "code": "MIT",
+    "docs": "CC BY 4.0"
+  }
+}

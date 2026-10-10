@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Narration timing contract (one file per narration module)",
+  "description": "Produced by extraction from the TTS capture log (or by any replacement engine). Times are seconds from the start of the module's audio file. Text is the SPOKEN text (phonetic), not the display text.",
+  "type": "object",
+  "required": ["duration", "lines"],
+  "properties": {
+    "duration": {"type": "number", "exclusiveMinimum": 0, "description": "Length of the module audio in seconds after pause removal"},
+    "fake": {"type": "boolean", "description": "true for placeholder timings generated before narration exists"},
+    "lines": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["t", "text"],
+        "properties": {
+          "t": {"type": "number", "minimum": 0, "description": "Start of the caption line in seconds"},
+          "text": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

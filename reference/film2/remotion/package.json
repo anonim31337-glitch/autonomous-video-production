@@ -1,0 +1,24 @@
+{
+  "name": "ai-native-film",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.0.4",
+    "@remotion/bundler": "4.0.416",
+    "@remotion/cli": "4.0.416",
+    "@remotion/google-fonts": "^4.0.416",
+    "@remotion/layout-utils": "4.0.416",
+    "@remotion/media-utils": "^4.0.416",
+    "@remotion/noise": "4.0.416",
+    "@remotion/paths": "4.0.416",
+    "@remotion/renderer": "4.0.416",
+    "@remotion/three": "4.0.416",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.416",
+    "three": "0.170.0"
+  }
+}
